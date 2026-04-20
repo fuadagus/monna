@@ -8,36 +8,75 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var username: String = ""
+
+
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color(.systemBackground)
                     .edgesIgnoringSafeArea(.all)
                 VStack{
-                    
                     VStack{
                         VStack{
-                            Text("Challenge yourself to answer")
-                            Text("The Great Questions")
+                            
+                        
+
+                        VStack{
+                            Text("Challenge yourself to answer").frame(maxWidth: .infinity, alignment: .leading)
+                            Text("The Great Questions").frame(maxWidth: .infinity, alignment: .leading)
                                 .font(.largeTitle).bold(true)
                             HStack{
-                                Text("Some great question")
+                                Text("Some great question").frame(maxWidth: .infinity, alignment: .leading)
                             }
                             
                         }
                         HStack{
-                            Text("Type your solution here")
+                            Text("Type your solution here").frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Button("Great Question"){
+                            Button("Send"){
                                 print("Tes Tombol")
                             }
                             
                         }
+                            
+                        }.background(Color(.secondarySystemBackground))
+                        Spacer()
+                        
+                        
                         VStack{
+                            
+                            Text("Questions Need Your Answer to Solve").font(.title3).bold(true).frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            VStack{
+                                VStack{
+                                    Text("Python").frame(maxWidth: .infinity, alignment: .leading)
+                                    Text("How to deploy python project").frame(maxWidth: .infinity, alignment: .leading)
+                                    HStack{
+                                        TextField(
+                                            "Type your solution here!",
+                                            text: $username
+                                        )
+                                       
+                        
+                                        .textInputAutocapitalization(.never)
+                                        .disableAutocorrection(true)
+                                        .border(.secondary)
+                                        
+                                        
+                                        
+                                        Button("Great Question"){
+                                            print("Tes Tombol")
+                                        }
+                                    }
+                                }
+                            }
                             
                         }
                         
-                    }
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .init(horizontal: .center, vertical: .center))
                 }.toolbar{
                     ToolbarItem(placement: .navigationBarLeading){
                         Image(systemName: "person.fill")
@@ -48,7 +87,7 @@ struct HomeView: View {
                         }
                         
                     }
-                }
+                }.padding(CGFloat(20))
             }
         }
     }
