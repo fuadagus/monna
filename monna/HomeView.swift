@@ -9,10 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var username: String = ""
-
-
-
+    @State private var question: String = ""
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -21,79 +19,100 @@ struct HomeView: View {
                 VStack{
                     VStack{
                         VStack{
+                            RoundedRectangle(cornerRadius: 20)
                             
-                        
-
-                        VStack{
-                            Text("Challenge yourself to answer").frame(maxWidth: .infinity, alignment: .leading)
-                            Text("The Great Questions").frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.largeTitle).bold(true)
-                            HStack{
-                                Text("Some great question").frame(maxWidth: .infinity, alignment: .leading)
-                            }
+                                .fill(Color(UIColor.mainCardColorBlue))
+                                .frame(maxWidth: .infinity,  alignment: Alignment(horizontal: .leading, vertical: .top))
+                                .scaledToFit()
+                                .overlay {
+                                    //                                    Title, Sub and The Q
+                                    VStack{
+                                        Text("Challenge yourself to answer").frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).foregroundColor(Color.white)
+                                            .scaledToFit()
+                                        
+                                        
+                                        Text("The Great Questions").frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).font(.title).bold().foregroundColor(Color.white)
+                                            .scaledToFit()
+                                        HStack{
+                                            Text("Some great question").frame(maxWidth: .infinity, alignment: .leading).foregroundColor(Color.white)
+                                        }
+                                        //                                       Question Input
+                                        HStack{
+                                            TextField(
+                                                "Type your solution here!",
+                                                text: $question
+                                            )
+                                            .textInputAutocapitalization(.never)
+                                            .disableAutocorrection(true)
+                                            .border(.secondary)
+                                            .background(.white)
+                                            .frame(height: 50)
+                                            
+                                            Button{
+                                                
+                                            } label: {
+                                                Image(systemName: "paperplane").fontWeight(.bold).clipShape(.circle)
+                                                   
+                                            }
+                                        }.frame(width: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top) )
+                                        
+                                    }.padding(20)
+                                }
                             
-                        }
-                        HStack{
-                            Text("Type your solution here").frame(maxWidth: .infinity, alignment: .leading)
+                            //                        Spacer()
                             
-                            Button("Send"){
-                                print("Tes Tombol")
-                            }
-                            
-                        }
-                            
-                        }.background(Color(.secondarySystemBackground))
-                        Spacer()
-                        
-                        
-                        VStack{
-                            
-                            Text("Questions Need Your Answer to Solve").font(.title3).bold(true).frame(maxWidth: .infinity, alignment: .leading)
                             
                             VStack{
+                                
+                                Text("Questions Need Your Answer to Solve").font(.title3).bold(true).frame(maxWidth: .infinity, alignment: .leading)
+                                
                                 VStack{
-                                    Text("Python").frame(maxWidth: .infinity, alignment: .leading)
-                                    Text("How to deploy python project").frame(maxWidth: .infinity, alignment: .leading)
-                                    HStack{
-                                        TextField(
-                                            "Type your solution here!",
-                                            text: $username
-                                        )
-                                       
-                        
-                                        .textInputAutocapitalization(.never)
-                                        .disableAutocorrection(true)
-                                        .border(.secondary)
-                                        
-                                        
-                                        
-                                        Button("Great Question"){
-                                            print("Tes Tombol")
+                                    VStack{
+                                        Text("Python").frame(maxWidth: .infinity, alignment: .leading)
+                                        Text("How to deploy python project").frame(maxWidth: .infinity, alignment: .leading)
+                                        HStack{
+                                            TextField(
+                                                "Type your solution here!",
+                                                text: $question
+                                            )
+                                            
+                                            
+                                            .textInputAutocapitalization(.never)
+                                            .disableAutocorrection(true)
+                                            .border(.secondary)
+                                            
+                                            
+                                            
+                                            Button("Send"){
+                                                print("Tes Tombol")
+                                            }
                                         }
                                     }
                                 }
+                                
+                            }
+                            
+                        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .init(horizontal: .center, vertical: .top))
+                    }.toolbar{
+                        
+                        ToolbarItem(placement: .navigationBarLeading){
+                            Image(systemName: "person.fill")
+                        }
+                        
+                        ToolbarItem(placement: .navigationBarTrailing){
+                            NavigationLink(destination: NotificationView()){
+                                Image(systemName: "bell.badge")
                             }
                             
                         }
-                        
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .init(horizontal: .center, vertical: .center))
-                }.toolbar{
-                    ToolbarItem(placement: .navigationBarLeading){
-                        Image(systemName: "person.fill")
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        NavigationLink(destination: NotificationView()){
-                            Image(systemName: "bell.badge")
-                        }
-                        
-                    }
-                }.padding(CGFloat(20))
+                    }.padding(CGFloat(20))
+                }
             }
         }
-    }
-    
-    func buttonGreatQ(){
-        print("The button has been clicked")
+        
+//        func buttonGreatQ(){
+//            print("The button has been clicked")
+//        }
     }
 }
 
