@@ -8,39 +8,58 @@
 import SwiftUI
 
 struct QAView: View {
+   var questionText: String = ""
     
-    @State private var question:String = ""
+    @State private var answerInput:String = ""
     var body: some View {
-        
-        VStack(alignment: .leading){
-            Text("Python").frame(width: 80, height: 20, alignment: Alignment(horizontal: .center, vertical: .top))
-                .foregroundColor(Color.blue)
-                .bold()
-                .padding(EdgeInsets(top: 2, leading: 16, bottom: 2, trailing: 16))
-                .background{
-                RoundedRectangle(cornerRadius: 20)
-                        .foregroundColor(Color.white)
-            }
-            
-            Text("How to make a questionasdfadfa aksdjnfkajdf akjsdfnakjdnf aksdjfnjkdfn akjdfnajdf akjfnjfdna akjfnjf ksjdfnjkf akjdnfjkf akdjnf?").frame(maxWidth: .infinity, maxHeight: 80, alignment: Alignment(horizontal: .leading, vertical: .top)).foregroundColor(Color.black).font(.title).bold().minimumScaleFactor(0.1)
-            HStack{
-                TextField(
-                    "Type your solution here!",
-                    text: $question
-                )
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .border(.secondary).foregroundColor(Color.white)
+        ZStack{
+            VStack(alignment: .leading){
+                Text("Python").frame(width: 80, height: 20, alignment: Alignment(horizontal: .center, vertical: .top))
+                    .foregroundColor(Color.blue)
+                    .bold()
+                    .padding(EdgeInsets(top: 2, leading: 16, bottom: 2, trailing: 16))
+                    .background{
+                    RoundedRectangle(cornerRadius: 20)
+//                            .background(Color.white)
+//                    .foregroundColor(Color.white)
+                    }.foregroundColor(Color.white)
                 
-                Button{
-                    print("Tes Tombol")
-                } label: {
-                    Image(systemName: "paperplane")
+                Text(questionText).frame(maxWidth: .infinity, maxHeight: 80, alignment: Alignment(horizontal: .leading, vertical: .top))
+                    .foregroundColor(Color.black)
+                    .font(.title)
+                    .bold()
+                    .minimumScaleFactor(0.1)
+                HStack{
+                    TextField(
+                        "Type your solution here!",
+                        text: $answerInput
+                    )
+                    .foregroundColor(Color.white)
+                    .frame(width: .infinity)
+                       
+    //                .textInputAutocapitalization(.never)
+    //                .disableAutocorrection(true)
+    //                .border(.secondary).foregroundColor(Color.white)
+                    
+                    Button{
+                        print("Tes Tombol")
+                    } label: {
+                        Image(systemName: "paperplane.circle").foregroundColor(Color.white)
+                    }
                 }
-            }
-        }.frame(width: .infinity, height: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top)).multilineTextAlignment(.leading).padding(10).background(Color.qaBackgroundColorOrange).clipShape( RoundedRectangle(cornerRadius: 10))
-        
-        
+                .padding(10)
+                .background(Color.qaBackgroundColorOrange)
+                .cornerRadius(10)
+            }.frame(width: .infinity, height: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top)).multilineTextAlignment(.leading)
+                .padding(20)
+//                .background(Color.qaBackgroundColorOrange)
+    //            .opacity(0.1)
+                .clipShape( RoundedRectangle(cornerRadius: 10))
+                RoundedRectangle(cornerRadius: 20).frame(width: .infinity, height: 200)
+                .foregroundColor(Color.qaBackgroundColorOrange)
+                .opacity(0.2)
+                .zIndex(-1)
+        }
         
         
     }

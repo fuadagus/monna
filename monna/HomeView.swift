@@ -18,81 +18,14 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack{
                     VStack{
-                        VStack{
-                            RoundedRectangle(cornerRadius: 20)
-                            
-                                .fill(Color(UIColor.mainCardColorBlue))
-                                .frame(maxWidth: .infinity,  alignment: Alignment(horizontal: .leading, vertical: .top))
-                                .scaledToFit()
-                                .overlay {
-                                    //                                    Title, Sub and The Q
-                                    VStack{
-                                        Text("Challenge yourself to answer").frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).foregroundColor(Color.white)
-                                            .scaledToFit()
-                                        
-                                        
-                                        Text("The Great Questions").frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).font(.title).bold().foregroundColor(Color.white)
-                                            .scaledToFit()
-                                        HStack{
-                                            Text("Some great question").frame(maxWidth: .infinity, alignment: .leading).foregroundColor(Color.white)
-                                        }
-                                        //                                       Question Input
-                                        HStack{
-                                            TextField(
-                                                "Type your solution here!",
-                                                text: $question
-                                            )
-                                            .textInputAutocapitalization(.never)
-                                            .disableAutocorrection(true)
-                                            .border(.secondary)
-                                            .background(.white)
-                                            .frame(height: 50)
-                                            
-                                            Button{
-                                                
-                                            } label: {
-                                                Image(systemName: "paperplane").fontWeight(.bold).clipShape(.circle)
-                                                   
-                                            }
-                                        }.frame(width: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top) )
-                                        
-                                    }.padding(20)
-                                }
-                            
-                            //                        Spacer()
-                            
-                            
-                            VStack{
-                                
-                                Text("Questions Need Your Answer to Solve").font(.title3).bold(true).frame(maxWidth: .infinity, alignment: .leading)
-                                
-                                VStack{
-                                    VStack{
-                                        Text("Python").frame(maxWidth: .infinity, alignment: .leading)
-                                        Text("How to deploy python project").frame(maxWidth: .infinity, alignment: .leading)
-                                        HStack{
-                                            TextField(
-                                                "Type your solution here!",
-                                                text: $question
-                                            )
-                                            
-                                            
-                                            .textInputAutocapitalization(.never)
-                                            .disableAutocorrection(true)
-                                            .border(.secondary)
-                                            
-                                            
-                                            
-                                            Button("Send"){
-                                                print("Tes Tombol")
-                                            }
-                                        }
-                                    }
-                                }
-                                
-                            }
+                            MainCardView()
+                       
+                            MainListQAView()
+                          
+                           
                             
                         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .init(horizontal: .center, vertical: .top))
+                            .padding(.horizontal, 20)
                     }.toolbar{
                         
                         ToolbarItem(placement: .navigationBarLeading){
@@ -105,7 +38,8 @@ struct HomeView: View {
                             }
                             
                         }
-                    }.padding(CGFloat(20))
+                    }
+//                    .padding(20)
                 }
             }
         }
@@ -113,8 +47,12 @@ struct HomeView: View {
 //        func buttonGreatQ(){
 //            print("The button has been clicked")
 //        }
+    
+    
+    
     }
-}
+//}
+
 
 #Preview {
     HomeView()
