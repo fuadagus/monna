@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MainCardView: View {
-    
-    @State private var question:String = ""
+    @State var questionText: String = "Ini adalah sebuah pertanyaan yang sangat bagus"
+    @State private var questionInput:String = ""
     var body: some View {
         VStack{
             
@@ -32,7 +32,7 @@ struct MainCardView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 
-                            Text("Some great question asodifniadufnaid iajsdnfjadf aidfiajdnfjadf aidjfnijdnf aidjfnjianf aidjnfjd ").multilineTextAlignment(.center).minimumScaleFactor(0.1).frame(maxWidth: .infinity, alignment: .center ).padding( EdgeInsets(top: 37, leading: 57, bottom: 57, trailing: 57)).foregroundColor(Color.black)
+                            Text(questionText).multilineTextAlignment(.center).minimumScaleFactor(0.1).frame(maxWidth: .infinity, alignment: .center ).padding( EdgeInsets(top: 37, leading: 57, bottom: 57, trailing: 57)).foregroundColor(Color.black)
                                 .bold()
                         }.frame(maxWidth: .infinity)
 //                        HStack{
@@ -42,17 +42,17 @@ struct MainCardView: View {
                         HStack{
                             TextField(
                                 "Type your solution here!",
-                                text: $question
+                                text: $questionInput
                             )
                             .textInputAutocapitalization(.never)
                             .disableAutocorrection(true)
-                            .padding(5)
-                            .frame(height: 34)
-                            .background(Color.qaBackgroundColorOrange)
-                            .cornerRadius(10)
-                            .padding(5)
-                            .background(.white)
-                            .cornerRadius(10)
+//                            .padding(5)
+//                            .frame(height: 34)
+//                            .background(Color.qaBackgroundColorOrange)
+//                            .cornerRadius(10)
+//                            .padding(5)
+//                            .background(.white)
+//                            .cornerRadius(10)
                             
                             Button{
                                 
@@ -62,7 +62,13 @@ struct MainCardView: View {
                                     .bold()
                                     .foregroundColor(Color.white)
                             }
-                        }.frame(width: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top) )
+                        }.frame(width: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top) ).padding(10)
+                            .frame(height: 40)
+                            .background(Color.qaBackgroundColorOrange)
+                            .cornerRadius(10)
+                            .padding(5)
+                            .background(.white)
+                            .cornerRadius(10)
                         
                     }
                     .padding(24)

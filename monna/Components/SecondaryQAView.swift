@@ -10,6 +10,7 @@ import SwiftUI
 struct SecondaryQAView: View {
     var questionText: String = "Sebuah pertanyaan"
     var isPending: Bool = false
+    var time: Int = 1
      
      @State private var answerInput:String = ""
     
@@ -52,7 +53,7 @@ struct SecondaryQAView: View {
                     .bold()
                     .minimumScaleFactor(0.1)
                 
-                TimeUIView(time: 60)
+                TimeUIView(time: time)
 
             }.frame(width: .infinity, height: .infinity, alignment: Alignment(horizontal: .leading, vertical: .top)).multilineTextAlignment(.leading)
                 .padding(20)

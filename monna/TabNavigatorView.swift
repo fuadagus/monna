@@ -13,17 +13,12 @@ struct TabNavigatorView: View {
             Tab("Home", systemImage: "house.circle.fill") {
                 HomeView()
             }
-//            .badge(2)
-
             Tab("Ask", systemImage: "plus.circle.fill") {
                AskView()
             }
-
             Tab("Discussion", systemImage: "bubble.circle.fill") {
                 DiscussionView()
-         
             }
-//            .badge("!")
         }.padding(.horizontal, 10)
     }
 }

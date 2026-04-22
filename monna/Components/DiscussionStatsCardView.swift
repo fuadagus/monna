@@ -28,15 +28,14 @@ struct DiscussionStatsCardView: View {
                             StatsView(isActive: true)
                             StatsView(isActive: false)
                         }.foregroundColor(Color.white)
-
-                      
-                        
                     }
                     .padding(24)
 //                    .background(Color.black)
                
                 }
         }
+//        .background(Color.black)
+//         .padding(0)
     }
 }
 

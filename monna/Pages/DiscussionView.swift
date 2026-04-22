@@ -16,14 +16,23 @@ struct DiscussionView: View {
                 VStack{
                     VStack{
                         DiscussionStatsCardView()
-                        
                         Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                            /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                            /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+                            Text("My Questions").tag(1)
+                            Text("My Answers").tag(2)
                         }.pickerStyle(SegmentedPickerStyle())
-                        
-                        VStack{
-                            
+                            .padding(.horizontal, 10)
+                           
+                        ScrollView{
+                            VStack{
+                                SecondaryQAView(isPending: true, time: 7000)
+                                SecondaryQAView(time: 120)
+                                SecondaryQAView(isPending: true, time: 30223)
+                                SecondaryQAView(time: 312)
+                                SecondaryQAView(isPending: true, time: 60)
+                                SecondaryQAView(time: 13214)
+                            }
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 10)
                         }
                         
 //
