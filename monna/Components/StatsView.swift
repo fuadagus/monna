@@ -27,7 +27,6 @@ struct StatsView: View {
                         .cornerRadius(10)
                         .overlay( RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 2))
         } else {
-            
           HStack{
                 Text("08")
                     .frame(width: 24, height: 24)
@@ -39,12 +38,8 @@ struct StatsView: View {
             .padding(5)
                 .cornerRadius(10)
                 .overlay( RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 2))
-            
         }
-
-//        
- 
-                        
+                
     }
     
     

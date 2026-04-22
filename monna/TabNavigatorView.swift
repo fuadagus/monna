@@ -16,7 +16,7 @@ struct TabNavigatorView: View {
 //            .badge(2)
 
             Tab("Ask", systemImage: "plus.circle.fill") {
-               DiscussionView()
+               AskView()
             }
 
             Tab("Discussion", systemImage: "bubble.circle.fill") {
