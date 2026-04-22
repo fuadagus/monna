@@ -32,7 +32,7 @@ struct MainCardView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 
-                            Text("Some great question asodifniadufnaid iajsdnfjadf aidfiajdnfjadf aidjfnijdnf aidjfnjianf aidjnfjd aijdfnasjd ajdfnasjfd ajdfnjf ajfnksjdfnjdf ajsdnfkjf jdfnaf").multilineTextAlignment(.center).minimumScaleFactor(0.1).frame(maxWidth: .infinity, alignment: .center ).padding( EdgeInsets(top: 37, leading: 57, bottom: 57, trailing: 57)).foregroundColor(Color.black)
+                            Text("Some great question asodifniadufnaid iajsdnfjadf aidfiajdnfjadf aidjfnijdnf aidjfnjianf aidjnfjd ").multilineTextAlignment(.center).minimumScaleFactor(0.1).frame(maxWidth: .infinity, alignment: .center ).padding( EdgeInsets(top: 37, leading: 57, bottom: 57, trailing: 57)).foregroundColor(Color.black)
                                 .bold()
                         }.frame(maxWidth: .infinity)
 //                        HStack{

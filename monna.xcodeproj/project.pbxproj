@@ -32,8 +32,8 @@
 		653613D12F92193900D5DA8F = {
 			isa = PBXGroup;
 			children = (
-				653613DC2F92193900D5DA8F /* monna */,
 				653613DB2F92193900D5DA8F /* Products */,
+				653613DC2F92193900D5DA8F /* monna */,
 			);
 			sourceTree = "<group>";
 		};
