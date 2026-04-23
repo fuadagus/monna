@@ -24,10 +24,10 @@ struct DiscussionView: View {
                            
                         ScrollView{
                             VStack{
-                                SecondaryQAView(isPending: true, time: 7000)
-                                SecondaryQAView(time: 120)
-                                SecondaryQAView(isPending: true, time: 30223)
-                                SecondaryQAView(time: 312)
+                                SecondaryQAView(questionText: "Sebuah pertanyaan yang lumayan sulit dijawab",isPending: true, time: 7000)
+                                SecondaryQAView(questionText: "Sebuah pertanyaan yang b aja", time: 120)
+                                SecondaryQAView(questionText: "Sebuah pertanyaan yang gampang", isPending: true, time: 30223)
+                                                SecondaryQAView(questionText: "Sebuah pertanyaan ", isPending: true, time: 312)
                                 SecondaryQAView(isPending: true, time: 60)
                                 SecondaryQAView(time: 13214)
                             }

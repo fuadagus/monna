@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainCardView: View {
-    @State var questionText: String = "Ini adalah sebuah pertanyaan yang sangat bagus"
+    @State var questionText: String = "Ini adalah sebuah pertanyaan yang sangat bagus dhfiuzdhfnigzbfiSBDFIjnzdsfz   iudsfhiuzsdf  iudsfhzusfdbzisfd diufhizdf "
     @State private var questionInput:String = ""
     var body: some View {
         VStack{
